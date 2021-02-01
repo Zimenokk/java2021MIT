@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.obrii.mit.dp2021.zimenokk</groupId>
-    <artifactId>dp2021Project</artifactId>
+    <artifactId>ZimenokMIT</artifactId>
     <version>01</version>
     <packaging>war</packaging>
 
-    <name>dp2021Project</name>
+    <name>ZimenokMIT</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
