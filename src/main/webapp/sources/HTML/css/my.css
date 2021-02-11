@@ -105,3 +105,13 @@
     font-weight: 600;
     text-align: center;
 }
+
+.mainKv>a {
+    font-size: 1.5rem;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin: 5% auto;
+    text-decoration: none;
+    color: #47576B;
+}
