@@ -1,0 +1,107 @@
+/* _____________________________________ */
+
+.checkBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.checkBoxes>p {
+    margin-right: 5%;
+    font-size: 20px;
+}
+
+.summ {
+    display: flex;
+    flex-direction: row;
+}
+
+.summ>p {
+    margin-right: 7%;
+}
+
+
+/* SUBMIT */
+
+.all {
+    height: 100vh;
+    background: url("../img/1920x1080/01.jpg");
+    padding-top: 10%;
+}
+
+.mainKv {
+    border: 2px solid white;
+    width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.89);
+    backdrop-filter: blur(4px);
+    padding: 3% 5%;
+}
+
+.mainKv>h1 {
+    font-size: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+.firstT {
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto 2% auto;
+    font-size: 1.5rem;
+}
+
+.firstT>p:nth-child(2) {
+    margin-left: 5%;
+}
+
+.secondT {
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto;
+    width: 100%;
+}
+
+.leftSecondT,
+.rightSecondT {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0 5% 0 0;
+    width: 50%;
+}
+
+.rightSecondT>p,
+.leftSecondT>p {
+    margin-right: 5%;
+}
+
+.thirdT {
+    margin: 5% auto;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.thirdT>p {
+    margin-right: 5%;
+}
+
+.thirdT>p:nth-child(1) {
+    margin-top: 1%;
+}
+
+.thirdT>p:nth-child(2) {
+    font-size: 30px;
+    line-height: 37px;
+    color: #47576B;
+}
+
+.mainKv>h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
