@@ -107,7 +107,7 @@
     </div>
 </div>
 <!--========== SLIDER ==========-->
-
+<div style="margin: 0 auto; width: 80%"><img style="margin: 0 auto;" src="${pageContext.request.contextPath}/HouseIMG/diagramm.jpg" alt=""></div>
 <!--========== PAGE LAYOUT ==========-->
 <!-- Service -->
 <div class="bg-color-sky-light" data-auto-height="true">
