@@ -37,16 +37,7 @@
                                 </p>
                             </div>
                             <div class="rightSecondT">
-                                <p>в кольорах:</p>
-                                <p>
-                                    <%
-                    if (data.getColors() != null) {
-                        out.print(data.getColors() );
-                    } else {
-                        out.print("які ми самі для вас оберемо =)");
-                    }
-                %>
-                                </p>
+
                             </div>
                         </div>
                         <div class="thirdT">
@@ -55,7 +46,7 @@
                                 <%=data.getSum()%>$</p>
                         </div>
                         <h2>Ваші побажання будуть враховані, до зустрічі!</h2>
-                        <a href="index.jsp">Повернутись на сайт</a>
+                        <a href="<%=request.getContextPath()%>/index.jsp">Повернутись на сайт</a>
                     </div>
                 </div>
         </body>

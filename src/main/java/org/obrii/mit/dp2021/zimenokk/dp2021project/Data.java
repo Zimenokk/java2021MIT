@@ -6,38 +6,32 @@ import java.util.List;
 public class Data {
 
 
-    private String Name;
-    private String Email;
-    private String HouseType;
-    private List<String> Colors;
-    private String  Sum;
+    private String name;
+    private String email;
+    private String houseType;
+    private String houseImage;
+    private String sum;
 
-    public Data(String name, String email, String houseType, String[] colors, String sum) {
-        Name = name;
-        Email = email;
-        HouseType = houseType;
-        if (colors != null) Colors = Arrays.asList(colors);
-        Sum = sum;
+    public Data(String name, String email, String houseType, String sum) {
+        this.name = name;
+        this.email = email;
+        this.houseType = houseType;
+        this.sum = sum;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public String getHouseType() {
-        return HouseType;
-    }
-
-
-    public List<String> getColors() {
-        return Colors;
+        return houseType;
     }
 
     public String getSum() {
-        return Sum;
+        return sum;
     }
 }

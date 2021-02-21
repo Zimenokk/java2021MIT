@@ -1,4 +1,6 @@
-package org.obrii.mit.dp2021.zimenokk.dp2021project;
+package org.obrii.mit.dp2021.zimenokk.dp2021project.classes;
+
+import org.obrii.mit.dp2021.zimenokk.dp2021project.Data;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,6 +15,11 @@ public class FormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Estate estateService = new Estate();
+
+        request.setAttribute("estate", estateService);
+
         request.getRequestDispatcher("pages/form.jsp").forward(request, response);
     }
 
@@ -22,8 +29,7 @@ public class FormServlet extends HttpServlet {
         Data data = new Data(
                 request.getParameter("name"),
                 request.getParameter("email"),
-                request.getParameter("house"),
-                request.getParameterValues("colors"),
+                request.getParameter("houseType"),
                 request.getParameter("number")
         );
 

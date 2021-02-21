@@ -1,3 +1,5 @@
+<%@ page import="org.obrii.mit.dp2021.zimenokk.dp2021project.classes.Estate" %>
+<%@ page import="org.obrii.mit.dp2021.zimenokk.dp2021project.interfaces.IHouse" %>
 <%--
   User: User
   Date: 10.02.2021
@@ -37,6 +39,7 @@
         <!-- BODY -->
 
         <body>
+        <% Estate service = (Estate) request.getAttribute("estate");%>
 
             <!--========== HEADER ==========-->
             <header class="header navbar-fixed-top">
@@ -118,19 +121,21 @@
                                     <input id="email" name="email" type="email" class="form-control footer-input margin-b-20" placeholder="E-mail" required>
                                     <label for="email"></label>
 
-                                    <input id="house" name="house" type="text" class="form-control footer-input margin-b-20" placeholder="Тип бажаного будинку" required>
-                                    <label for="house"></label>
+                                    <p style="margin: 0 0 0 4%">Виберіть тип будинку: </p>
+
+                                    <div style="margin: 5% 0 9% 36%">
+                                        <select name="houseType"
+                                                required="required">
+                                            <% for (IHouse house: service.getHouses()) {%>
+                                            <option value="<%= house.getType()%>">
+                                                <%=house.getType()%>
+                                            </option>
+                                            <%}%>
+
+                                        </select>
+                                    </div>
 
                                     <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Ваші побажання" required></textarea>
-                                    <p>Які кольори ви бажаєте бачити в дизайні вашого фасаду?</p>
-                                    <div class="checkBoxes">
-                                        <p><input id="black" type="checkbox" name="colors" value="black">
-                                            <label for="black"></label> Чорний</p>
-                                        <p><input id="white" type="checkbox" name="colors" value="white">
-                                            <label for="white"></label> Білий</p>
-                                        <p><input id="green" type="checkbox" name="colors" value="green">
-                                            <label for="green"></label> Зелений</p>
-                                    </div>
                                     <div class="summ">
                                         <p>Сума вашого проєкту:</p>
                                         <p><input id="number" name="number">

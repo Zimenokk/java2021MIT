@@ -58,7 +58,7 @@
                 <div class="menu-container">
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="${pageContext.request.contextPath}/index.jsp">Домашня сторінка</a></li>
-                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${pageContext.request.contextPath}/pages/form.jsp">Заповнити форму</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${pageContext.request.contextPath}/form">Заповнити форму</a></li>
                     </ul>
                 </div>
             </div>
