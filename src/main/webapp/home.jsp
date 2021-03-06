@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="org.obrii.mit.dp2021.zimenokk.dp2021project.CRUD.Data"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=utf-8" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -47,7 +47,7 @@
                     <p><%=data.getEmail()%></p>
 
                     <div class="editDel">
-                        <form action="update.jsp" method="post">
+                        <form action="<%=request.getContextPath()%>/update?id=<%=data.getId()%>" method="get">
                             <input type="hidden" name="id" value="<%=data.getId()%>">
                             <input type="hidden" name="name" value="<%=data.getName()%>">
                             <input type="hidden" name="age" value="<%=data.getAge()%>">
