@@ -11,9 +11,4 @@ public interface CrudDataInterface {
     void updateData(int id, Data data);
 
     void deleteData(int id);
-
-    void writeData(List<Data> data);
-    
-    public List<Data> sortData(String phrase);
-
 }

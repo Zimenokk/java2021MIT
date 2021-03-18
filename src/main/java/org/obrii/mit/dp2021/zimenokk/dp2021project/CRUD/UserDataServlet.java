@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "UserDataServlet", urlPatterns = {"/"})
 public class UserDataServlet extends HttpServlet {
-    FilesCrud CRUD = new FilesCrud(new File(Config.getFileName()));
+    DBCrud CRUD = new DBCrud();
    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Read users
         if (Config.getFileName().equals("")) {
             Config.setFileName(this.getServletContext().getRealPath("") + "data.txt");
-            CRUD = new FilesCrud(new File(Config.getFileName()));
+            CRUD = new DBCrud();
         }
-        System.out.println("Hello");
         if(request.getParameter("search")!=null){
             request.setAttribute("data", CRUD.sortData(request.getParameter("search")));
             }
         else{
             request.setAttribute("data", CRUD.readData());
         }
-        System.out.println("Hello");
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
