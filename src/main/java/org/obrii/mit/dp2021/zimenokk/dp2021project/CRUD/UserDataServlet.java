@@ -66,5 +66,6 @@ public class UserDataServlet extends HttpServlet {
     private String localise(String text){
         byte[] bytes = text.getBytes(StandardCharsets.ISO_8859_1);
         return new String(bytes, StandardCharsets.UTF_8);
+
     }
 }
