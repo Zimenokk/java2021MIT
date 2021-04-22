@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Spring Boot MVC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+
+</head>
+
+<body>
+    <div th:switch="${users}">
+        <h2 th:case="null"> Електронна черга на отримання ID-паспорта громадянина України.</h2>
+        <div class="tbl" th:case="*">
+            <img src="../img/фон.jpg" alt="">
+            <h2>Громадяни, котрі вже в черзі.</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Пошта</th>
+                        <th>↓</th>
+                        <th>↓</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td><a th:href="@{/edit/{id}(id=${user.id})}">Змінити</a></td>
+                        <td><a th:href="@{/delete/{id}(id=${user.id})}">Видалити</a></td>
+                    </tr>
+                </tbody>
+                </table/>
+        </div>
+        <style>
+            .button {
+                border: 5px solid black;
+                width: 8%;
+                height: 50px;
+                border-radius: 5px;
+                text-decoration: none;
+                margin-top: 5%;
+                color: black;
+            }
+        </style>
+        <p><a class="button" href="./signup">Зайняти місце в черзі.</a></p>
+    </div>
+
+
+</body>
+
+</html>
