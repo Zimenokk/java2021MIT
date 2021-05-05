@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Spring Boot MVC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/newcss.css}">
+</head>
+
+<body>
+    <div th:switch="${students}">
+        <h2 th:case="null">Електронна черга на отримання ID-паспорта громадянина України.</h2>
+        <div class="tbl" th:case="*">
+            <h2>Громадяни, котрі вже в черзі.</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Пошта</th>
+                        <th>↓</th>
+                        <th>↓</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student : ${students}">
+                        <td th:text="${student.name}"></td>
+                        <td th:text="${student.email}"></td>
+
+                        <td>
+                            <form action="./update" method="post">
+                                <input type="hidden" name="url" th:value="${student.getHref()}">
+                                <input type="text" name="name" th:value="${student.name}" />
+                                <input type="text" name="email" th:value="${student.email}" />
+                                <button type="submit">Змінити</button>
+
+
+                            </form>
+                        </td>
+                        <td>
+                            <form action="./del" method="post">
+                                <input type="hidden" name="url" th:value="${student.getHref()}">
+                                <button type="submit">Видалити</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <form action="./post" method="post">
+                            <td><input type="text" name="name" /></td>
+                            <td><input type="text" name="email" /></td>
+                            <td colspan="2"><button type="submit">Зайняти місце</button></td>
+                        </form>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form action="./getMessage">
+            <button type="submit"><span>Відправити</span></button>
+        </form>
+    </div>
+
+</body>
+
+</html>
